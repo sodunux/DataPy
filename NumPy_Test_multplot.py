@@ -1,0 +1,15 @@
+import numpy as np 
+import matplotlib.pyplot as plt 
+x=np.arange(0,100,0.1)
+y=np.sin(x)
+z=np.cos(x)
+plt.figure(1)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.subplot(211)
+plt.plot(x,y,label="sin(x)")
+plt.legend()
+plt.subplot(212)
+plt.plot(x,z,label="cos(x)")
+plt.legend()
+plt.show()
