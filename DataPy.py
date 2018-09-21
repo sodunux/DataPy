@@ -155,6 +155,14 @@ class DataPandas:
 		obj=Series([4,7,-5,3],index=['d','b','a','c'])
 		print(obj.index)
 
+	def Demo3(self):
+		filename=open('601069.csv',encoding='gbk')
+		df=pd.read_csv(filename)
+		print(df['收盘价'])
+		print(df['最高价'])
+		print(df['最低价'])
+
+
 
 if __name__ == '__main__':
 	#dp=DataPlot()
@@ -162,4 +170,4 @@ if __name__ == '__main__':
 	#dn=DataNumpy()
 	#dn.Base()
 	ddp=DataPandas()
-	ddp.Demo2()
+	ddp.Demo3()
