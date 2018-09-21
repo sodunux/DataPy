@@ -141,6 +141,7 @@ class DataNumpy:
 
 class DataPandas:
 	def __init__(self):
+		plt.rcParams['font.sans-serif'] = ['SimHei']  # 中文字体设置
 		pass
 	def Demo1(self):
 		obj=Series(range(1,5))
@@ -158,9 +159,17 @@ class DataPandas:
 	def Demo3(self):
 		filename=open('601069.csv',encoding='gbk')
 		df=pd.read_csv(filename)
-		print(df['收盘价'])
-		print(df['最高价'])
-		print(df['最低价'])
+		spj=df['收盘价']
+		zgj=df['最高价']
+		zdj=df['最低价']
+		#print(df['收盘价'])
+		#print(df['最高价'])
+		#print(df['最低价'])
+		spj.plot()
+		zgj.plot()
+		zdj.plot()
+		plt.show()
+
 
 
 
