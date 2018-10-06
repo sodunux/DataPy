@@ -29,7 +29,7 @@ class TsPy:
         # 日期，开盘价，最高价，收盘价，最低价，成交量，价格变动
         # 涨跌幅，5日均价，10日均价，20日均价
         # 5日均量，10日均量，20日均量
-        dat = ts.get_hist_data(code,start="2008-01-01",end="2018-09-28")
+        dat = ts.get_hist_data(code, start="2008-01-01", end="2018-09-28")
         dat = dat.drop(['price_change', 'p_change'], axis=1)
         dat.index = pd.to_datetime(dat.index)
 
@@ -43,8 +43,17 @@ class TsPy:
         # plt.grid()
         plt.show()
 
+    def demo(self):
+        dat = pd.read_csv('money_suppy.csv')
+        dat.index = pd.to_datetime(dat['month'])
+        dat.drop(['month'], axis=1)
+        print(dat)
+        dat.plot()
+        plt.show()
+
 
 if __name__ == '__main__':
     pdat = TsPy()
     # pdat.get_k_data('600000')
-    pdat.get_hist_data('600000')
+    # pdat.get_hist_data('600000')
+    pdat.demo()
