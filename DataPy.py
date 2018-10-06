@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import *
 import pandas as pd
 from pandas import Series, DataFrame
 from random import randint
@@ -9,6 +10,7 @@ class DataPlot:
 
     def __init__(self):
         plt.rcParams['font.sans-serif'] = ['SimHei']  # 中文字体设置
+        self.font = FontProperties(fname='/System/Library/Fonts/PingFang.ttc')
         pass
 
     def Demo(self):
@@ -30,9 +32,6 @@ class DataPlot:
         # self.MapPie(demo_x,demo_y)
         # self.MapShow()
         # self.ShowPie(demo_x,demo_y)
-
-    def GetChinese(self):
-        return FontProperties(fname='/System/Library/Fonts/SimHei.ttf')
 
     def MapPosition(self, row, column, position):
         plt.figure(1)
@@ -151,7 +150,7 @@ class DataPandas:
     def __init__(self):
         plt.rcParams['font.sans-serif'] = ['SimHei']  # 中文字体设置
         # plt.rcParams['font.family'] = ['STFangsong']
-        # self.font = FontProperties(fname='/Library/Fonts/Songti.ttc')
+        self.font = FontProperties(fname='/Library/Fonts/Songti.ttc')
 
         pass
 
@@ -203,8 +202,11 @@ class DataPandas:
         #plt.subplot(2, 2, 2)
         #plt.plot(cjl.index, cjl.values)
         #plt.subplot(2, 2, 3)
-        plt.plot(spj.index, spj.values * 10)
+        plt.title('测试', fontproperties=self.font)
+        plt.plot(spj.index, spj.values * 10,
+                 label="测试1")
         plt.plot(hsl.index, hsl.values * 6)
+        plt.legend()
         plt.grid()
         # zdf.plot()r
         # spj.plot()
