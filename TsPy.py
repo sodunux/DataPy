@@ -194,4 +194,4 @@ if __name__ == '__main__':
     #pdat.gdp_vs_m2()
     #pdat.deposit_vs_loan()
     #pdat.get_stock_basics()
-    pdat.get_cashflow_data()
+    pdat.get_stock_basics()
